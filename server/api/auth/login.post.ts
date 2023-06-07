@@ -61,6 +61,6 @@ export default defineEventHandler(async (event) => {
 
   return {
     access_token: accessToken,
-    user: exclude(user, ["password"]),
+    user: exclude(user, ["password", "createdAt", "updatedAt"]),
   };
 });

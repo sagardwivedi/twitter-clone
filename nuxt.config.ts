@@ -8,4 +8,5 @@ export default defineNuxtConfig({
     jwtAccessToken: process.env.JWT_ACCESS_TOKEN,
     jwtRefreshToken: process.env.JWT_REFRESH_TOKEN,
   },
+  telemetry: false,
 });

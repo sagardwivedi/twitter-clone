@@ -13,3 +13,11 @@ export const createRefreshToken = ({ token, userId }: refreshTokenProps) => {
     },
   });
 };
+
+export const getRefreshTokenByToken = (token?: string) => {
+  return prisma.refreshToken.findUnique({
+    where: {
+      token,
+    },
+  });
+};

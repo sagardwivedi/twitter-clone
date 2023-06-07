@@ -19,7 +19,15 @@ export const createUser = (userData: UserDataProps) => {
 export const getUserByUsername = (username: string) => {
   return prisma.user.findUnique({
     where: {
-      username: username,
+      username,
+    },
+  });
+};
+
+export const getUserById = (id: string) => {
+  return prisma.user.findUnique({
+    where: {
+      id,
     },
   });
 };
