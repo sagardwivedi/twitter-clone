@@ -3,6 +3,7 @@ import jwt_decode from "jwt-decode";
 import { User } from ".prisma/client";
 
 type UserType = Omit<User, "password" | "createdAt" | "updatedAt"> | undefined;
+
 type TokenBody = {
   userId: string;
   exp: number;

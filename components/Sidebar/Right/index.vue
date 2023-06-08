@@ -6,7 +6,7 @@
         v-for="whatsHappening in whatsHappeningItems"
       >
         <div>
-          <h2 class="text-lg font-bold text-gray-800 dark:text-white">
+          <h2 class="text-md font-bold text-gray-800 dark:text-white">
             {{ whatsHappening.title }}
           </h2>
           <p class="text-xs text-gray-400">{{ whatsHappening.count }}</p>
@@ -17,7 +17,7 @@
     <!-- Preview Card : Who to follow -->
     <SidebarRightPreviewCard title="Who to follow">
       <SidebarRightPreviewCardItem v-for="whoToFollow in whoToFollowItems">
-        <div class="flex flex-row justify-between items-center p-2">
+        <div class="flex flex-row items-center justify-between p-2">
           <div class="flex flex-row">
             <img
               :src="whoToFollow.image"

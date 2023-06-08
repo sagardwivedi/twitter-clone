@@ -9,7 +9,9 @@
     >
       {{ props.title }}
     </h1>
+
     <slot></slot>
+
     <div
       class="cursor-pointer p-3 text-sm text-blue-400 hover:bg-gray-100 dark:hover:bg-dim-300"
       :class="defaultTransition"

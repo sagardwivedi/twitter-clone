@@ -6,12 +6,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare && prisma generate"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@types/bcrypt": "^5.0.0",
     "@types/formidable": "^2.0.6",
+    "@types/humanize-duration": "^3.27.1",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18",
     "@types/prettier": "^2.7.3",
@@ -27,7 +28,7 @@
     "bcrypt": "^5.1.0",
     "cloudinary": "^1.37.0",
     "formidable": "^2.1.2",
-    "human-time": "^0.0.2",
+    "humanize-duration": "^3.28.0",
     "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^3.1.2",
     "url-pattern": "^1.0.3"

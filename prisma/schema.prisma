@@ -24,6 +24,9 @@ model User {
 
   // Tweet
   Tweet Tweet[]
+
+  // Media Files
+  mediaFile MediaFile[]
 }
 
 model RefreshToken {
@@ -54,10 +57,31 @@ model Tweet {
   // Reply to another tweet
   replyToId String?
   replyTo   Tweet?  @relation("replies", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  repltToId Tweet[] @relation("replies")
+  replies   Tweet[] @relation("replies")
 
   // Media Files
+  mediaFile MediaFile[]
 
   @@index([authorId])
   @@index([replyToId])
+}
+
+model MediaFile {
+  id               String @id @default(cuid())
+  url              String
+  providerPublicId String
+
+  // Relation to User
+  user   User   @relation(fields: [UserId], references: [id])
+  UserId String
+
+  // Relation to Tweets
+  tweet   Tweet?  @relation(fields: [tweetId], references: [id])
+  tweetId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([UserId])
+  @@index([tweetId])
 }

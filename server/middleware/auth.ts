@@ -4,18 +4,18 @@ import { sendError } from "h3";
 import { getUserById } from "../db/users";
 import { User } from ".prisma/client";
 
-type MyFancyAuthType = {
+type AuthSession = {
   user: User;
 };
 
 declare module "h3" {
   interface H3EventContext {
-    auth: MyFancyAuthType;
+    auth: AuthSession;
   }
 }
 
 export default defineEventHandler(async (event) => {
-  const endpoints = ["/api/auth/user"];
+  const endpoints = ["/api/auth/user", "/api/user/tweets", "/api/tweets"];
 
   const isHandledByThisMiddleware = endpoints.some((endopoint) => {
     const pattern = new UrlPattern(endopoint);
