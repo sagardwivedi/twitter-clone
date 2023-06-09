@@ -9,6 +9,8 @@
     "postinstall": "nuxt prepare && prisma generate"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.5.5",
+    "@nuxtjs/html-validator": "^1.4.0",
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@types/bcrypt": "^5.0.0",
     "@types/formidable": "^2.0.6",

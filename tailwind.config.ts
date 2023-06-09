@@ -3,6 +3,16 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: "class",
   content: [],
+  safelist: [
+    {
+      pattern: /text-(red|green|yello|blue)-(100|400)/,
+      variants: ["group-hover"],
+    },
+    {
+      pattern: /bg-(red|green|yello|blue)-(100|400)/,
+      variants: ["group-hover"],
+    },
+  ],
   theme: {
     screens: {
       xs: "614px",
