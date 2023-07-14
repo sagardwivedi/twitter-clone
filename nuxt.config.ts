@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     shim: false,
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/html-validator"],
+  modules: ["@nuxtjs/tailwindcss"],
 
   runtimeConfig: {
     jwtAccessToken: process.env.JWT_ACCESS_TOKEN,
